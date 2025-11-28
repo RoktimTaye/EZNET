@@ -21,8 +21,8 @@ let onlineUsers = new Map();
 // blocks for notification in every functionality
 // like mossage , match, swipe request etc .
 //From here
-app.set('io',io);
-app.set('onlineUsers',onlineUsers);
+app.set('io', io);
+app.set('onlineUsers', onlineUsers);
 // till here
 io.on("connection", (socket) => {
   console.log("⚡ User connected:", socket.id);
@@ -34,7 +34,7 @@ io.on("connection", (socket) => {
   // Handle sending a message
   socket.on("sendMessage", async ({ senderId, receiverId, message, matchId }) => {
     //DB is linked to store the message sending
-    const Message = require("./models/message.model");
+    const Message = require("./src/models/message.model");
 
     // Save to DB
     const newMessage = await Message.create({ sender: senderId, receiver: receiverId, message, matchId });
@@ -70,7 +70,7 @@ io.on("connection", (socket) => {
       if (socketId === socket.id) onlineUsers.delete(userId);
     }
   });
-  
+
 });
 
 const port = 3000;

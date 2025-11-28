@@ -1167,7 +1167,7 @@ The payment system seems to be designed for a tutor/student interaction, which m
 *   **Missing Tests:** There are no tests for the application. Adding unit and integration tests would improve the code's quality and prevent regressions.
 *   **Inconsistent Naming:** There are some inconsistencies in naming conventions (e.g., `Notofication` vs `Notification` in `swipe.controller.js`).
 *   **`chat.controller.js` uses `MessageChannel` which is not a defined model.** It should be `Message`.
-*   **`user.model.js` has `DataTransfer` for `createdAt` and `swipe.model.js` has it for `timestamp` which is not a valid mongoose type.** It should be `Date`.
+*   **`user.model.js` has `Date` for `createdAt` and `swipe.model.js` has it for `timestamp` which is not a valid mongoose type.** It should be `Date`.
 *   **`auth.middleware.js` has a logical error in the `if` condition.** It should be `!authHeader || !authHeader.startsWith('Bearer ')`.
 *   **`auth.middleware.js` is missing `next()` in the `try` block.**
 *   **`explore.controller.js` has a typo `swipedIds` instead of `swipedUserId`.**

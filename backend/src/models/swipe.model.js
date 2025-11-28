@@ -9,7 +9,7 @@ const swipeSchema = new mongoose.Schema({
         enum: ['left', 'right', 'undo', 'redo'],
         required: true
     },
-    timestamp: { type: DataTransfer, default: 0 },
+    timestamp: { type: Date, default: 0 },
     matchScore: { type: Number, default: 0 },
 }, { timestamps: true });
 

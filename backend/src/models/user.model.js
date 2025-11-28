@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
     accountType:{type: String, enum: ["free","premium"],default:"free"},
     rating:{type: Number,default:0},
     lastActive:{type: Date, default: Date.now},
-    createdAt:{type: DataTransfer,default: Date.now}
+    createdAt:{type: Date,default: Date.now}
     
 });
 

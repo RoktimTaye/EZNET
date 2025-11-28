@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 
-exports.protect = async (req, res) => {
+exports.protect = async (req, res, next) => {
     try {
         const authHeader = req.headers.authorization;
-        if (authHeader || !authHeader.startWith('Bearer ')) return res.status(401).json({ message: "Authorization token missing" });
+        if (!authHeader || !authHeader.startsWith('Bearer ')) return res.status(401).json({ message: "Authorization token missing" });
 
         const token = authHeader.split(' ')[1];
 
